@@ -9,8 +9,8 @@ model_fraud = pickle.load(open('model_fraud.sav','rb'))
 tfidf = TfidfVectorizer
 
 loaded_vec = TfidfVectorizer(decode_error="replace", vocabulary=set(pickle.load(open("new_selected_feature_tf-idf.sav", "rb"))))
+st.set_page_config(page_title="WebApp Prediksi Harga Mobil", page_icon="🚗")
 
-# judul halaman
 st.markdown(
     """
     <style>
@@ -21,6 +21,8 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+# judul halaman
+
 st.markdown("<h1 class='centered-title'>Prediksi SMS Penipuan</h1>", unsafe_allow_html=True)
 
 clean_teks = st.text_input('Masukan Teks SMS')
